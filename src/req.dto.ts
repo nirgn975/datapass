@@ -1,4 +1,4 @@
-import { IsIn, IsMongoId, IsOptional, IsString } from 'class-validator';
+import { IsEmail, IsIn, IsMongoId, IsOptional, IsPhoneNumber, IsString } from 'class-validator';
 
 export class SearchRequestDto {
   @IsMongoId()
@@ -9,11 +9,11 @@ export class SearchRequestDto {
   @IsOptional()
   'sources.url'?: string;
 
-  @IsString()
+  @IsPhoneNumber()
   @IsOptional()
   'phones.number'?: string;
 
-  @IsString()
+  @IsEmail()
   @IsOptional()
   'emails.address'?: string;
 
